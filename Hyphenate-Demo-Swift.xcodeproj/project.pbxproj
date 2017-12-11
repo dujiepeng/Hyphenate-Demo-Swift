@@ -376,6 +376,12 @@
 		9092A9461FDA3F9D00565FB2 /* EMVideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9092A9441FDA3F9D00565FB2 /* EMVideoViewController.xib */; };
 		909602221FC7D8C700E71B93 /* EMAlertAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909602211FC7D8C700E71B93 /* EMAlertAction.swift */; };
 		909642FF1FDE3B57002D5271 /* callRing.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 909642FE1FDE3B57002D5271 /* callRing.mp3 */; };
+		909643061FDE8007002D5271 /* libffmpeg-ios-full.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 909643041FDE8007002D5271 /* libffmpeg-ios-full.a */; };
+		909643071FDE8007002D5271 /* libHyphenateVideoRecorderPlugin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 909643051FDE8007002D5271 /* libHyphenateVideoRecorderPlugin.a */; };
+		909643091FDE80EA002D5271 /* libbz2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 909643081FDE80E9002D5271 /* libbz2.tbd */; };
+		9096430B1FDE8105002D5271 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9096430A1FDE8105002D5271 /* libiconv.tbd */; };
+		9096430D1FDE810B002D5271 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9096430C1FDE810B002D5271 /* libz.tbd */; };
+		9096430F1FDE8A40002D5271 /* EMAlbumManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9096430E1FDE8A40002D5271 /* EMAlbumManager.swift */; };
 		90A1BEF51FD5070B008B1158 /* EMGroupSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A1BEF41FD5070B008B1158 /* EMGroupSettingsViewController.swift */; };
 		90A1BEF91FD56D68008B1158 /* EMGroupShareFileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A1BEF81FD56D68008B1158 /* EMGroupShareFileViewController.swift */; };
 		90A1BEFD1FD574DA008B1158 /* EMShareFileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A1BEFC1FD574D9008B1158 /* EMShareFileCell.swift */; };
@@ -812,6 +818,13 @@
 		9092A9441FDA3F9D00565FB2 /* EMVideoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EMVideoViewController.xib; sourceTree = "<group>"; };
 		909602211FC7D8C700E71B93 /* EMAlertAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMAlertAction.swift; sourceTree = "<group>"; };
 		909642FE1FDE3B57002D5271 /* callRing.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = callRing.mp3; sourceTree = "<group>"; };
+		909643031FDE8007002D5271 /* EMVideoRecorderPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMVideoRecorderPlugin.h; sourceTree = "<group>"; };
+		909643041FDE8007002D5271 /* libffmpeg-ios-full.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libffmpeg-ios-full.a"; sourceTree = "<group>"; };
+		909643051FDE8007002D5271 /* libHyphenateVideoRecorderPlugin.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libHyphenateVideoRecorderPlugin.a; sourceTree = "<group>"; };
+		909643081FDE80E9002D5271 /* libbz2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.tbd; path = usr/lib/libbz2.tbd; sourceTree = SDKROOT; };
+		9096430A1FDE8105002D5271 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
+		9096430C1FDE810B002D5271 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		9096430E1FDE8A40002D5271 /* EMAlbumManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMAlbumManager.swift; sourceTree = "<group>"; };
 		90A1BEF41FD5070B008B1158 /* EMGroupSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMGroupSettingsViewController.swift; sourceTree = "<group>"; };
 		90A1BEF81FD56D68008B1158 /* EMGroupShareFileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMGroupShareFileViewController.swift; sourceTree = "<group>"; };
 		90A1BEFC1FD574D9008B1158 /* EMShareFileCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EMShareFileCell.swift; sourceTree = "<group>"; };
@@ -868,9 +881,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				909643071FDE8007002D5271 /* libHyphenateVideoRecorderPlugin.a in Frameworks */,
+				9096430D1FDE810B002D5271 /* libz.tbd in Frameworks */,
 				672BE66FDFF04D2E7D8741AD /* Pods_Hyphenate_Demo_Swift.framework in Frameworks */,
 				90749EDD1EF90E5B00D3A065 /* libopencore-amrwb.a in Frameworks */,
+				909643091FDE80EA002D5271 /* libbz2.tbd in Frameworks */,
+				9096430B1FDE8105002D5271 /* libiconv.tbd in Frameworks */,
 				90749EDC1EF90E5B00D3A065 /* libopencore-amrnb.a in Frameworks */,
+				909643061FDE8007002D5271 /* libffmpeg-ios-full.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -889,6 +907,9 @@
 		72F453B667FE9D87E187731E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9096430C1FDE810B002D5271 /* libz.tbd */,
+				9096430A1FDE8105002D5271 /* libiconv.tbd */,
+				909643081FDE80E9002D5271 /* libbz2.tbd */,
 				2C955AB940CDDDC270F02086 /* Pods_Hyphenate_Demo_Swift.framework */,
 			);
 			name = Frameworks;
@@ -916,6 +937,7 @@
 			isa = PBXGroup;
 			children = (
 				90C00C7A1EEF9C4B0049BFAD /* Hyphenate-Demo-Swift.entitlements */,
+				909643021FDE8007002D5271 /* HyphenateVideoRecoder */,
 				9011DF631EEEC22700C43D05 /* Resources */,
 				9011DF5C1EEEC02E00C43D05 /* Storyboards */,
 				9011DF561EEEC00800C43D05 /* Code */,
@@ -1421,6 +1443,7 @@
 				9081812C1FD8FB8800294B68 /* EMCallManager.swift */,
 				9092A9431FDA3F9D00565FB2 /* EMVideoViewController.swift */,
 				9092A9441FDA3F9D00565FB2 /* EMVideoViewController.xib */,
+				9096430E1FDE8A40002D5271 /* EMAlbumManager.swift */,
 			);
 			path = Call;
 			sourceTree = "<group>";
@@ -1564,6 +1587,16 @@
 				90BE5EC31F133D0D00C126EB /* EMSetNameViewController.swift */,
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		909643021FDE8007002D5271 /* HyphenateVideoRecoder */ = {
+			isa = PBXGroup;
+			children = (
+				909643031FDE8007002D5271 /* EMVideoRecorderPlugin.h */,
+				909643041FDE8007002D5271 /* libffmpeg-ios-full.a */,
+				909643051FDE8007002D5271 /* libHyphenateVideoRecorderPlugin.a */,
+			);
+			path = HyphenateVideoRecoder;
 			sourceTree = "<group>";
 		};
 		90B43DC81F0120AF0084E67F /* Cell */ = {
@@ -2123,6 +2156,7 @@
 				9069B3C81FC41C25004F9DBD /* EMGroupCell.swift in Sources */,
 				90190C831F0F997D00A238F3 /* EMPushNotificationViewController.swift in Sources */,
 				90638D991FCED88200D76493 /* EMMemberCollectionViewCell.swift in Sources */,
+				9096430F1FDE8A40002D5271 /* EMAlbumManager.swift in Sources */,
 				9024B15A1F00AEAD0043FD81 /* EMLocationViewController.swift in Sources */,
 				90190C7B1F0F488800A238F3 /* EMAccountViewController.swift in Sources */,
 				905912B81FC57701001510BC /* EMChatroomAdminListViewController.swift in Sources */,
@@ -2340,6 +2374,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Hyphenate-Demo-Swift/Code/Utilities/DeviceHelper/VoiceConvert/opencore-amrnb",
 					"$(PROJECT_DIR)/Hyphenate-Demo-Swift/Code/Utilities/DeviceHelper/VoiceConvert/opencore-amrwb",
+					"$(PROJECT_DIR)/Hyphenate-Demo-Swift/HyphenateVideoRecoder",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.hyphenate.demo.im;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2366,6 +2401,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Hyphenate-Demo-Swift/Code/Utilities/DeviceHelper/VoiceConvert/opencore-amrnb",
 					"$(PROJECT_DIR)/Hyphenate-Demo-Swift/Code/Utilities/DeviceHelper/VoiceConvert/opencore-amrwb",
+					"$(PROJECT_DIR)/Hyphenate-Demo-Swift/HyphenateVideoRecoder",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.hyphenate.demo.im;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -26,6 +26,7 @@ class EMCallManager: NSObject, EMCallManagerDelegate, EMCallBaseVCDelegate{
     
     override init() {
         super.init()
+        EMVideoRecorderPlugin.initGlobalConfig()
         setupEMCall()
     }
     
@@ -51,6 +52,31 @@ class EMCallManager: NSObject, EMCallManagerDelegate, EMCallBaseVCDelegate{
     }
     
     // MARK: - CallActions
+    func startVideoRecord() {
+        var error: EMError? = nil
+        EMVideoRecorderPlugin.sharedInstance().startVideoRecording(toFilePath: EMCallFileManager().saveRecorderPath(), error: &error)
+        if error != nil { print((error?.errorDescription)!) }
+    }
+    
+    func stopVideoRecord() {
+        var error: EMError? = nil
+        EMVideoRecorderPlugin.sharedInstance().stopVideoRecording(&error)
+        if error != nil { print((error?.errorDescription)!) }
+        else {
+            let path = EMCallFileManager().recorderFilePath()
+            if path != nil {
+                EMAlbumManager().saveVideoToAlbum(path: path!, callBack: { (error) in
+                    if error != nil {
+                        print("Save to album error")
+                    }
+                    else {
+                        EMCallFileManager().removeRecordFile()
+                    }
+                })
+            }
+        }
+    }
+    
     func makeVoiceCall(caller: String?) {
         if caller == nil {
             return
@@ -280,5 +306,34 @@ class EMCallManager: NSObject, EMCallManagerDelegate, EMCallBaseVCDelegate{
     
     func didUpdateRemoteCameraView(_ cameraView: UIView) {
         callSession?.remoteVideoView = cameraView as! EMCallRemoteView
+    }
+}
+
+class EMCallFileManager: NSObject {
+    
+    func saveRecorderPath() -> String {
+        let saveRecorderDoc:String = NSHomeDirectory() + "/Documents/VideoRecorder/"
+        let fileManager = FileManager.default
+        if !fileManager.fileExists(atPath: saveRecorderDoc) {
+            try! fileManager.createDirectory(atPath: saveRecorderDoc,
+                                             withIntermediateDirectories: true, attributes: nil)
+        }
+        
+        return saveRecorderDoc
+    }
+    
+    func recorderFilePath () -> String? {
+        let manager = FileManager.default
+        let urlForDocument = manager.urls(for: .documentDirectory, in:.userDomainMask)
+        let url = urlForDocument[0] as URL
+        let contentsOfURL = try? manager.contentsOfDirectory(at: url.appendingPathComponent("VideoRecorder"),includingPropertiesForKeys: nil, options: .skipsHiddenFiles)
+        return contentsOfURL?.first?.path
+    }
+    
+    func removeRecordFile () {
+        let path = recorderFilePath()
+        if path != nil {
+            try! FileManager.default.removeItem(atPath: path!)
+        }
     }
 }

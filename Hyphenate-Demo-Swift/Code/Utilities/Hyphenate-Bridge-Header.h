@@ -11,5 +11,6 @@
 
 #import "EMEmoji.h"
 #import "EMCDDeviceManager.h"
+#import "EMVideoRecorderPlugin.h"
 
 #endif /* Hyphenate_Bridge_Header_h */

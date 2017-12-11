@@ -20,7 +20,7 @@ class EMShareFilesManager {
     func creatShareFiles() {
         for _ in 0...5 {
             let rendom = Int(arc4random()%10000) + 1
-            let filePath = fileDocPath() + "ShareFile_" + String(rendom) + ".txt"
+            let filePath = shareFileDocPath() + "ShareFile_" + String(rendom) + ".txt"
             let info = "FileName " + "ShareFile" + String(rendom) + ".txt"
             try! info.write(toFile: filePath, atomically: true, encoding: String.Encoding.utf8)
         }
@@ -43,10 +43,10 @@ class EMShareFilesManager {
     }
     
     func downLoadPathWith(filename: String) -> String{
-        return fileDocPath() + filename
+        return shareFileDocPath() + filename
     }
     
-    func fileDocPath() -> String {
+    func shareFileDocPath() -> String {
         let shareFileDoc:String = NSHomeDirectory() + "/Documents/ShareFiles/"
         let fileManager = FileManager.default
         if !fileManager.fileExists(atPath: shareFileDoc) {

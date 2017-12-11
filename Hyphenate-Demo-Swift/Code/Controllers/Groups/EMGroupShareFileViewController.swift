@@ -9,7 +9,7 @@
 import UIKit
 import Hyphenate
 
-let downloadPath = EMShareFilesManager.sharedInstance.fileDocPath()
+let downloadPath = EMShareFilesManager.sharedInstance.shareFileDocPath()
 
 class EMGroupShareFileViewController: EMBaseRefreshTableViewController, EMShareFileCellDelegate, EMShareFilesVCDelegate{
 
